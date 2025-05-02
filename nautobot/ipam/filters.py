@@ -136,6 +136,10 @@ class VRFFilterSet(NautobotFilterSet, StatusModelFilterSetMixin, TenancyModelFil
         to_field_name="name",
         label="Namespace (name or ID)",
     )
+    virtual_device_contexts = django_filters.ModelMultipleChoiceFilter(
+        queryset=VirtualDeviceContext.objects.all(),
+        label="Virtual Device Context (ID)",
+    )
 
     class Meta:
         model = VRF
